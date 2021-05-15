@@ -1,0 +1,93 @@
+---Local Functions---
+
+local function TeleHome()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("home")
+end
+
+local function TeleFend1()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("fendstrum")
+end
+
+local function TeleFend2()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("fendstrum2")
+end
+
+local function TeleSpawn()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("spawn")
+end
+
+local function TeleRocks()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("rocks")
+end
+
+local function TeleGrass2()
+game:GetService("ReplicatedStorage").DemonTeleport:FireServer("grass2")
+end
+
+local function EquipHat()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("EquipRelic", "Very Cool Hat")
+end
+
+local function EquipEye()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("EquipRelic", "Alien Eye")
+end
+
+local function EquipRose()
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("EquipRelic", "Dark Rose")
+end
+
+---GameServices/Remotes Using EnumKeyCodes---
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadOne then
+ TeleFend1()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadTwo then
+ TeleFend2()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadThree then
+ TeleHome()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadFour then
+ TeleSpawn()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadFive then
+ TeleRocks()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadSix then
+ TeleGrass2()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadSeven then
+ EquipHat()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadEight then
+ EquipEye()
+ end
+ end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.KeypadNine then
+ EquipRose()
+ end
+ end)
